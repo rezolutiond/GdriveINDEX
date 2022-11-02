@@ -235,7 +235,7 @@ function sleep(milliseconds) {
          page_token: params['page_token'] || null,
          page_index: params['page_index'] || 0
      };
-     $('#update').html(`<div class='alert alert-info' role='alert'> Connecting...</div></div></div>`);
+
      $.post(UI.api_url+path, p, function(data, status) {
          var res = jQuery.parseJSON(gdidecode(read(data)));
          if (res && res.error && res.error.code == '401') {
@@ -301,7 +301,7 @@ function sleep(milliseconds) {
          page_token: params['page_token'] || null,
          page_index: params['page_index'] || 0
      };
-     $('#update').html(`<div class='alert alert-info' role='alert'> Connecting...</div></div></div>`);
+
      $.post(`${UI.api_url}/${window.current_drive_order}:search`, p, function(data, status) {
          var res = jQuery.parseJSON(gdidecode(read(data)));
          if (res && res.data === null) {
