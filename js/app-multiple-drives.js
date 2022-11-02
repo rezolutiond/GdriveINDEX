@@ -291,7 +291,7 @@ function requestSearch(params, resultCallback) {
         page_token: params['page_token'] || null,
         page_index: params['page_index'] || 0
     };
-    $('#update').html(`<div class='alert alert-info' role='alert'> Connecting...</div></div></div>`);
+
     $.post(`/${window.current_drive_order}:search`, p, function(data, status) {
         var res = jQuery.parseJSON(gdidecode(read(data)));
         if (res && res.data === null) {
